@@ -37,9 +37,18 @@
 
 ## Usage
 ```javascript
-import RNCallerId from 'react-native-caller-id';
+import CallerId from 'react-native-caller-id';
 
-// TODO: What to do with the module?
-RNCallerId;
+// Check extension enabled status on iOS
+const enabled = await CallerId.getExtensionEnabledStatus();
+
+// Set caller ids list
+const callers = [
+  {
+    name: "A Caller Name",
+    number: "8494141414"
+  }
+]
+await CallerId.setCallerList()
 ```
   

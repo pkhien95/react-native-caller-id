@@ -1,4 +1,4 @@
 <resources>
-    <string name="default_app_name">Members App</string>
+    <string name="default_app_name">CallerID App</string>
     <string name="default_caller_name">Unknown caller</string>
 </resources>
