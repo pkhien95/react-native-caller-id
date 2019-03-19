@@ -1,6 +1,13 @@
+'use strict';
 
-import { NativeModules } from 'react-native';
+import {Platform} from "react-native";
 
-const { RNCallerId } = NativeModules;
+let CallerId;
 
-export default RNCallerId;
+if (Platform.OS === "ios") {
+    CallerId = require("./index.ios").default;
+} else {
+    CallerId = require("./index.android").default;
+}
+
+export default CallerId;
