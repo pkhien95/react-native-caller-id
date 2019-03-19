@@ -1,9 +1,7 @@
 
-#if __has_include("RCTBridgeModule.h")
-#import "RCTBridgeModule.h"
-#else
 #import <React/RCTBridgeModule.h>
-#endif
+#import <CallKit/CallKit.h>
+#import <React/RCTLog.h>
 
 @interface RNCallerId : NSObject <RCTBridgeModule>
 
