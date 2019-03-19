@@ -48,7 +48,7 @@ const callers = [
     name: "A Caller Name",
     number: "8494141414"
   }
-]
-await CallerId.setCallerList()
+];
+await CallerId.setCallerList(callers);
 ```
   
