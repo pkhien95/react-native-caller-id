@@ -1,5 +1,5 @@
 {
-  "name": "CallerID Example",
+  "name": "react-native-caller-id-example",
   "version": "0.0.1",
   "private": true,
   "scripts": {
@@ -8,7 +8,8 @@
   },
   "dependencies": {
     "react": "16.8.3",
-    "react-native": "0.59.1"
+    "react-native": "0.59.1",
+    "react-native-caller-id": "https://github.com/hienphung/react-native-caller-id"
   },
   "devDependencies": {
     "@babel/core": "^7.3.4",
