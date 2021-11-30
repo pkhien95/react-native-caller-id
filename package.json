@@ -12,8 +12,5 @@
     "name": "Hien Phung",
     "email": "hienphungkhanh@gmail.com"
   },
-  "license": "MIT",
-  "peerDependencies": {
-    "react-native": "^0.41.2"
-  }
+  "license": "MIT"
 }
