@@ -36,37 +36,24 @@ public class CallReceiver extends BroadcastReceiver {
         Log.d("CALLER_ID", stateStr);
         Log.d("CALLER_ID", "Is Showing overlay =>"+isShowingOverlay);
         String number = intent.getExtras().getString(TelephonyManager.EXTRA_INCOMING_NUMBER); 
-        int state = 0;
-        if(stateStr.equals(TelephonyManager.EXTRA_STATE_IDLE)){
+        if (stateStr.equals(TelephonyManager.EXTRA_STATE_IDLE) || stateStr.equals(TelephonyManager.EXTRA_STATE_OFFHOOK)) {
             if (isShowingOverlay) {
                 isShowingOverlay = false;
                 dismissCallerInfo(context);
             }
-            state = TelephonyManager.CALL_STATE_IDLE;
-        }
-        else if(stateStr.equals(TelephonyManager.EXTRA_STATE_OFFHOOK)){
-            if (isShowingOverlay) {
-                isShowingOverlay = false;
-                dismissCallerInfo(context);
+        } else if(stateStr.equals(TelephonyManager.EXTRA_STATE_RINGING)){
+            if (number != null && !number.isEmpty() && !number.equals("null")) {
+                isShowingOverlay = true; 
+                Log.d("CALLER_ID", "NUMBER =>"+number);
+                String callerInfo = getCallerInfo(context, number);
+                StringTokenizer tokenizedCallerInfo = new StringTokenizer(callerInfo, "|");
+                String callerName = tokenizedCallerInfo.nextToken();
+                String callerPosition = tokenizedCallerInfo.nextToken(); 
+                if (callerName != null && callerPosition != null) {
+                    showCallerInfo(context, callerName, callerPosition);
+                }
+                return; 
             }
-            state = TelephonyManager.CALL_STATE_OFFHOOK;
-        }
-        else if(stateStr.equals(TelephonyManager.EXTRA_STATE_RINGING)){
-            if (isShowingOverlay) {
-                isShowingOverlay = false;
-                dismissCallerInfo(context);
-            }
-            state = TelephonyManager.CALL_STATE_RINGING;
-        }
-        if (number != null && !number.isEmpty() && !number.equals("null")) {
-            isShowingOverlay = true; 
-            Log.d("CALLER_ID", "NUMBER =>"+number);
-            String callerInfo = getCallerInfo(context, number);
-            String[] separated = callerInfo.split("|");
-            if (separated[0] != null && separated[1] != null) {
-                showCallerInfo(context, separated[0], separated[1]);
-            }
-            return; 
         }
     }
 
