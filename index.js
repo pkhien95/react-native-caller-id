@@ -1,13 +1,31 @@
 'use strict';
 
-import {Platform} from "react-native";
+import {NativeModules} from 'react-native';
 
-let CallerId;
+const {RNCallerId: CallerId} = NativeModules;
 
-if (Platform.OS === "ios") {
-    CallerId = require("./index.ios").default;
-} else {
-    CallerId = require("./index.android").default;
-}
+export const setCallerList = async (callerList) => {
+  try {
+    return await CallerId.setCallerList(callerList);
+  } catch (error) {
+    throw error;
+  }
+};
 
-export default CallerId;
+//Android only
+export const requestOverlayPermission = async (callerList) => {
+  try {
+    return await CallerId.requestOverlayPermission(callerList);
+  } catch (error) {
+    throw error;
+  }
+};
+
+//iOS only
+export const getExtensionEnabledStatus = async () => {
+  try {
+    return await CallerId.getExtensionEnabledStatus();
+  } catch (error) {
+      throw error;
+  }
+};
