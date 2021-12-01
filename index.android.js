@@ -10,4 +10,10 @@ export const setCallerList = async (callerList) => {
   }
 };
 
-export default CallerId;
+export const requestOverlayPermission = async (callerList) => {
+  try {
+    return await CallerId.requestOverlayPermission(callerList);
+  } catch (error) {
+    throw error;
+  }
+};

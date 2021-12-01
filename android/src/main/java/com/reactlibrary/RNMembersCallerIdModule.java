@@ -40,10 +40,11 @@ public class RNMembersCallerIdModule extends ReactContextBaseJavaModule {
                 Log.d("CALLER_ID", "Caller: " + String.valueOf(caller));
                 if (caller.hasKey("name") && caller.hasKey("numbers")) {
                     String callerName = caller.getString("name");
+                    String callerPosition = caller.getString("position");
                     ReadableArray callerNumbers = caller.getArray("numbers");
                     for (int j = 0; j < callerNumbers.size(); j++) {
                         String phoneNumber = callerNumbers.getString(j);
-                        editor.putString("+" + phoneNumber, callerName);
+                        editor.putString("+" + phoneNumber, callerName, callerPosition);
                     }
                 }
             }
@@ -52,19 +53,6 @@ public class RNMembersCallerIdModule extends ReactContextBaseJavaModule {
             Log.e("CALLER_ID", e.getLocalizedMessage());
         }
 
-    }
-
-    @ReactMethod
-    public void setAppName(String appName) {
-        try {
-            SharedPreferences sharedPreferences = getReactApplicationContext().getSharedPreferences(Constants.APP_NAME_PREF_KEY, Context.MODE_PRIVATE);
-            SharedPreferences.Editor editor = sharedPreferences.edit();
-            editor.clear();
-            editor.putString(Constants.APP_NAME_PREF_KEY, appName);
-            editor.apply();
-        } catch (Exception e) {
-            Log.e("CALLER_ID", e.getLocalizedMessage());
-        }
     }
 
     private boolean isSystemAlertPermissionGranted(Context context) {
