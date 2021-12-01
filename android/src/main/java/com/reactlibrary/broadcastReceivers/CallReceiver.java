@@ -62,7 +62,7 @@ public class CallReceiver extends BroadcastReceiver {
             isShowingOverlay = true; 
             Log.d("CALLER_ID", "NUMBER =>"+number);
             Object callerInfo = getCallerInfo(context, number);
-            String[] separated = currentString.split("|");
+            String[] separated = callerInfo.split("|");
             if (separated[0] != null && separated[1] != null) {
                 showCallerInfo(context, separated[0], separated[1]);
             }
