@@ -62,15 +62,16 @@ public class CallReceiver extends BroadcastReceiver {
             isShowingOverlay = true; 
             Log.d("CALLER_ID", "NUMBER =>"+number);
             Object callerInfo = getCallerInfo(context, number);
-            if (callerInfo != null) {
-                showCallerInfo(context, callerInfo);
+            String[] separated = currentString.split("|");
+            if (separated[0] != null && separated[1] != null) {
+                showCallerInfo(context, separated[0], separated[1]);
             }
             return; 
         }
     }
 
-    private void showCallerInfo(final Context context, final Object callerInfo) {
-        Log.d("CALLER_ID", "Show Caller info of: " + callerInfo);
+    private void showCallerInfo(final Context context, final String callerName, final String callerPosition ) {
+        Log.d("CALLER_ID", "Show Caller info of: " + callerName + callerPosition);
         new Handler().postDelayed(new Runnable() {
 
             @Override
@@ -90,11 +91,11 @@ public class CallReceiver extends BroadcastReceiver {
 
                     // Set caller name
                     TextView tvCallerName = overlay.findViewById(R.id.callerName);
-                    tvCallerName.setText(callerInfo.name);
+                    tvCallerName.setText(callerName);
 
                     // Set caller position
                     TextView tvCallerPosition = overlay.findViewById(R.id.callerPosition);
-                    tvCallerPosition.setText(callerInfo.position);
+                    tvCallerPosition.setText(callerPosition);
                 }
 
                 int typeParam = Build.VERSION.SDK_INT >= Build.VERSION_CODES.O ? WindowManager.LayoutParams.TYPE_APPLICATION_OVERLAY : WindowManager.LayoutParams.TYPE_PHONE;
@@ -121,7 +122,7 @@ public class CallReceiver extends BroadcastReceiver {
     }
 
     private String getCallerInfo(final Context context, String phoneNumber) {
-        Log.d("CALLER_ID", "Get Caller name of phoneNumber: " + phoneNumber);
+        Log.d("CALLER_ID", "Get Caller info of phoneNumber: " + phoneNumber);
         SharedPreferences pref = context.getSharedPreferences(Constants.CALLER_PREF_KEY, 0);
         if (pref.contains(phoneNumber)) {
             return pref.getString(phoneNumber, null);

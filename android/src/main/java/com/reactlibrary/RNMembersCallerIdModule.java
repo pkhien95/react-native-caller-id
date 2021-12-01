@@ -44,7 +44,7 @@ public class RNMembersCallerIdModule extends ReactContextBaseJavaModule {
                     ReadableArray callerNumbers = caller.getArray("numbers");
                     for (int j = 0; j < callerNumbers.size(); j++) {
                         String phoneNumber = callerNumbers.getString(j);
-                        editor.putString("+" + phoneNumber, callerName, callerPosition);
+                        editor.putString("+" + phoneNumber, callerName+"|"+callerPosition);
                     }
                 }
             }
