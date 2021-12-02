@@ -8,6 +8,10 @@
     "react-native",
     "caller-id"
   ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/crazycodeboy/react-native-splash-screen.git"
+  },
   "author": {
     "name": "Hien Phung",
     "email": "hienphungkhanh@gmail.com"
