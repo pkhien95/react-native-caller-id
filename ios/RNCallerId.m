@@ -3,9 +3,9 @@
 
 #define DATA_KEY @"CALLER_LIST"
 
-#define DATA_GROUP @"group.whosapp.members"
+#define DATA_GROUP @"group.samolet.semployee"
 
-#define EXTENSION_ID @"com.whosapp.members.CallDirectoryExtension"
+#define EXTENSION_ID @"com.samolet.semployee.CallDirectoryExtension"
 
 @implementation RNCallerId
 

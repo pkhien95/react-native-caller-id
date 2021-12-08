@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		05AD852B2240D7DB000DCB02 /* CallDirectoryHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 05AD852A2240D7DB000DCB02 /* CallDirectoryHandler.m */; };
+		780A14702760F12B00E6A025 /* CallDirectoryHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 780A146F2760F12B00E6A025 /* CallDirectoryHandler.m */; };
 		B3E7B58A1CC2AC0600A0062D /* RNCallerId.m in Sources */ = {isa = PBXBuildFile; fileRef = B3E7B5891CC2AC0600A0062D /* RNCallerId.m */; };
 /* End PBXBuildFile section */
 
@@ -24,12 +24,12 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		05AD85272240D7DB000DCB02 /* CallerIDExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = CallerIDExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
-		05AD85292240D7DB000DCB02 /* CallDirectoryHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CallDirectoryHandler.h; sourceTree = "<group>"; };
-		05AD852A2240D7DB000DCB02 /* CallDirectoryHandler.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CallDirectoryHandler.m; sourceTree = "<group>"; };
-		05AD852C2240D7DB000DCB02 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		05AD85302240D8D2000DCB02 /* CallerIDExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CallerIDExtension.entitlements; sourceTree = "<group>"; };
+		05AD85272240D7DB000DCB02 /* CallerIDExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; name = CallerIDExtension.appex; path = "/Users/themnumbers/react-native-caller-id/ios/build/Debug-iphoneos/CallerIDExtension.appex"; sourceTree = "<absolute>"; };
 		134814201AA4EA6300B7C361 /* libRNCallerId.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libRNCallerId.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		780A146C2760F12B00E6A025 /* CallDirectoryExt.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = CallDirectoryExt.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		780A146E2760F12B00E6A025 /* CallDirectoryHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CallDirectoryHandler.h; sourceTree = "<group>"; };
+		780A146F2760F12B00E6A025 /* CallDirectoryHandler.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CallDirectoryHandler.m; sourceTree = "<group>"; };
+		780A14712760F12B00E6A025 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B3E7B5881CC2AC0600A0062D /* RNCallerId.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RNCallerId.h; sourceTree = "<group>"; };
 		B3E7B5891CC2AC0600A0062D /* RNCallerId.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RNCallerId.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -49,20 +49,16 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		780A14692760F12B00E6A025 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		05AD85282240D7DB000DCB02 /* CallerIDExtension */ = {
-			isa = PBXGroup;
-			children = (
-				05AD85302240D8D2000DCB02 /* CallerIDExtension.entitlements */,
-				05AD85292240D7DB000DCB02 /* CallDirectoryHandler.h */,
-				05AD852A2240D7DB000DCB02 /* CallDirectoryHandler.m */,
-				05AD852C2240D7DB000DCB02 /* Info.plist */,
-			);
-			path = CallerIDExtension;
-			sourceTree = "<group>";
-		};
 		134814211AA4EA7D00B7C361 /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -76,10 +72,20 @@
 			children = (
 				B3E7B5881CC2AC0600A0062D /* RNCallerId.h */,
 				B3E7B5891CC2AC0600A0062D /* RNCallerId.m */,
-				05AD85282240D7DB000DCB02 /* CallerIDExtension */,
+				780A146D2760F12B00E6A025 /* CallDirectoryExt */,
 				134814211AA4EA7D00B7C361 /* Products */,
-				05AD85272240D7DB000DCB02 /* CallerIDExtension.appex */,
+				780A146C2760F12B00E6A025 /* CallDirectoryExt.appex */,
 			);
+			sourceTree = "<group>";
+		};
+		780A146D2760F12B00E6A025 /* CallDirectoryExt */ = {
+			isa = PBXGroup;
+			children = (
+				780A146E2760F12B00E6A025 /* CallDirectoryHandler.h */,
+				780A146F2760F12B00E6A025 /* CallDirectoryHandler.m */,
+				780A14712760F12B00E6A025 /* Info.plist */,
+			);
+			path = CallDirectoryExt;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -119,6 +125,23 @@
 			productReference = 134814201AA4EA6300B7C361 /* libRNCallerId.a */;
 			productType = "com.apple.product-type.library.static";
 		};
+		780A146B2760F12B00E6A025 /* CallDirectoryExt */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 780A14742760F12B00E6A025 /* Build configuration list for PBXNativeTarget "CallDirectoryExt" */;
+			buildPhases = (
+				780A14682760F12B00E6A025 /* Sources */,
+				780A14692760F12B00E6A025 /* Frameworks */,
+				780A146A2760F12B00E6A025 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CallDirectoryExt;
+			productName = CallDirectoryExt;
+			productReference = 780A146C2760F12B00E6A025 /* CallDirectoryExt.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -141,6 +164,10 @@
 					58B511DA1A9E6C8500147676 = {
 						CreatedOnToolsVersion = 6.1.1;
 					};
+					780A146B2760F12B00E6A025 = {
+						CreatedOnToolsVersion = 13.1;
+						ProvisioningStyle = Automatic;
+					};
 				};
 			};
 			buildConfigurationList = 58B511D61A9E6C8500147676 /* Build configuration list for PBXProject "RNCallerId" */;
@@ -148,6 +175,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 			);
 			mainGroup = 58B511D21A9E6C8500147676;
@@ -157,12 +185,20 @@
 			targets = (
 				58B511DA1A9E6C8500147676 /* RNCallerId */,
 				05AD85262240D7DB000DCB02 /* CallerIDExtension */,
+				780A146B2760F12B00E6A025 /* CallDirectoryExt */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
 		05AD85252240D7DB000DCB02 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		780A146A2760F12B00E6A025 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -176,7 +212,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				05AD852B2240D7DB000DCB02 /* CallDirectoryHandler.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -185,6 +220,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				B3E7B58A1CC2AC0600A0062D /* RNCallerId.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		780A14682760F12B00E6A025 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				780A14702760F12B00E6A025 /* CallDirectoryHandler.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -376,6 +419,86 @@
 			};
 			name = Release;
 		};
+		780A14722760F12B00E6A025 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = CallDirectoryExt/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = CallDirectoryExt;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2021 Facebook. All rights reserved.";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				MARKETING_VERSION = 1.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.samolet.CallDirectoryExt;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		780A14732760F12B00E6A025 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = CallDirectoryExt/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = CallDirectoryExt;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2021 Facebook. All rights reserved.";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				MARKETING_VERSION = 1.0;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.samolet.CallDirectoryExt;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -402,6 +525,15 @@
 			buildConfigurations = (
 				58B511F01A9E6C8500147676 /* Debug */,
 				58B511F11A9E6C8500147676 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		780A14742760F12B00E6A025 /* Build configuration list for PBXNativeTarget "CallDirectoryExt" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				780A14722760F12B00E6A025 /* Debug */,
+				780A14732760F12B00E6A025 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

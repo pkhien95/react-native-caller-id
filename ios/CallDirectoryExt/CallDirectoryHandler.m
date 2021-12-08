@@ -1,15 +1,15 @@
 //
 //  CallDirectoryHandler.m
-//  CallerDirectoryExtension
+//  CallDirectoryExt
 //
-//  Created by Phung Khanh Hien on 2/26/19.
-//  Copyright © 2019 Facebook. All rights reserved.
+//  Created by Илья Коваценко on 08.12.2021.
+//  Copyright © 2021 Facebook. All rights reserved.
 //
 
 #import "CallDirectoryHandler.h"
 
 #define DATA_KEY @"CALLER_LIST"
-#define APP_GROUP @"com.samolet.semployee"
+#define APP_GROUP @"com.hienphung.callerid"
 
 @interface Caller : NSObject
 @property NSString* name;
@@ -28,13 +28,13 @@
 @end
 
 @interface CallDirectoryHandler () <CXCallDirectoryExtensionContextDelegate>
-
 @end
 
 @implementation CallDirectoryHandler
 
 - (void)beginRequestWithExtensionContext:(CXCallDirectoryExtensionContext *)context {
     context.delegate = self;
+
     if (context.isIncremental) {
         [context removeAllIdentificationEntries];
     }
@@ -57,6 +57,7 @@
         NSLog(@"Failed to get caller list: %@", e.description);
     }
 }
+
 
 - (void)addAllIdentificationPhoneNumbersToContext:(CXCallDirectoryExtensionContext *)context {
     @try {
@@ -82,9 +83,10 @@
     
 }
 
+#pragma mark - CXCallDirectoryExtensionContextDelegate
+
 - (void)requestFailedForExtensionContext:(nonnull CXCallDirectoryExtensionContext *)extensionContext withError:(nonnull NSError *)error {
     NSLog(@"Request failed: %@", error.localizedDescription);
 }
 
 @end
-
