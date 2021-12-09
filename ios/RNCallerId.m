@@ -2,12 +2,13 @@
 #import "RNCallerId.h"
 
 #define DATA_KEY @"CALLER_LIST"
-
 #define DATA_GROUP @"group.samolet.semployee"
-
 #define EXTENSION_ID @"com.samolet.semployee.CallDirectoryExtension"
 
 @implementation RNCallerId
+- (dispatch_queue_t)methodQueue{
+    return dispatch_get_main_queue();
+}
 
 RCT_EXPORT_MODULE()
 
