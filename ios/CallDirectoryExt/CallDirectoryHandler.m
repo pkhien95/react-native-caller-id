@@ -48,37 +48,44 @@
     @try {
         NSUserDefaults* userDefaults = [[NSUserDefaults alloc] initWithSuiteName:APP_GROUP];
         NSArray* callerList = [userDefaults arrayForKey:DATA_KEY];
+        NSLog(@"CALLER_ID Get caller list");
         if (callerList) {
             return callerList;
         }
         return [[NSArray alloc] init];
     }
     @catch(NSException* e) {
-        NSLog(@"Failed to get caller list: %@", e.description);
+        NSLog(@"CALLER_ID Failed to get caller list: %@", e.description);
     }
 }
 
 
 - (void)addAllIdentificationPhoneNumbersToContext:(CXCallDirectoryExtensionContext *)context {
     @try {
+        NSLog(@"CALLER_ID init indif");
         NSArray* callerList = [self getCallerList];
         NSMutableDictionary<NSNumber*, NSString*>* labelsKeyedByPhoneNumber = [[NSMutableDictionary alloc] init];
         NSUInteger callersCount = [callerList count];
+        NSLog(@"CALLER_ID check caller count");
         if(callersCount > 0) {
             for (NSUInteger i = 0; i < callersCount; i += 1) {
+                NSLog(@"CALLER_ID into two");
                 Caller* caller = [[Caller alloc] initWithDictionary:([callerList objectAtIndex:i])];
                 for (NSUInteger j = 0; j < [caller.numbers count]; j++) {
+                    NSLog(@"CALLER_ID into three");
                     NSNumber* number = caller.numbers[j];
                     [labelsKeyedByPhoneNumber setValue:caller.name forKey:number];
                 }
             }
         }
+        NSLog(@"CALLER_ID write start");
         for (NSNumber *phoneNumber in [labelsKeyedByPhoneNumber.allKeys sortedArrayUsingSelector:@selector(compare:)]) {
+            NSLog(@"CALLER_ID write one");
             NSString *label = labelsKeyedByPhoneNumber[phoneNumber];
             [context addIdentificationEntryWithNextSequentialPhoneNumber:(CXCallDirectoryPhoneNumber)[phoneNumber unsignedLongLongValue] label:label];
         }
     } @catch (NSException* e) {
-        NSLog(@"Failed to get caller list: %@", e.description);
+        NSLog(@"CALLER_ID Failed to get caller list: %@", e.description);
     }
     
 }
@@ -86,7 +93,7 @@
 #pragma mark - CXCallDirectoryExtensionContextDelegate
 
 - (void)requestFailedForExtensionContext:(nonnull CXCallDirectoryExtensionContext *)extensionContext withError:(nonnull NSError *)error {
-    NSLog(@"Request failed: %@", error.localizedDescription);
+    NSLog(@"CALLER_ID Request failed: %@", error.localizedDescription);
 }
 
 @end
