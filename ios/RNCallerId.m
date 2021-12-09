@@ -3,7 +3,7 @@
 
 #define DATA_KEY @"CALLER_LIST"
 #define DATA_GROUP @"group.com.samolet.employee"
-#define EXTENSION_ID @"com.samolet.employee.CallDirectoryExt"
+#define EXTENSION_ID @"com.samolet.employee.CallDirectoryExtension"
 
 @implementation RNCallerId
 - (dispatch_queue_t)methodQueue{
