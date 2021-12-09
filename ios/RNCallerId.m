@@ -2,8 +2,8 @@
 #import "RNCallerId.h"
 
 #define DATA_KEY @"CALLER_LIST"
-#define DATA_GROUP @"group.samolet.employee"
-#define EXTENSION_ID @"com.samolet.employee.CallDirectoryExtension"
+#define DATA_GROUP @"group.com.samolet.employee"
+#define EXTENSION_ID @"com.samolet.employee.CallDirectoryExt"
 
 @implementation RNCallerId
 - (dispatch_queue_t)methodQueue{
