@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		780A14702760F12B00E6A025 /* CallDirectoryHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 780A146F2760F12B00E6A025 /* CallDirectoryHandler.m */; };
+		784819D02767434900EBA558 /* CallKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 784819CF2767434900EBA558 /* CallKit.framework */; };
 		B3E7B58A1CC2AC0600A0062D /* RNCallerId.m in Sources */ = {isa = PBXBuildFile; fileRef = B3E7B5891CC2AC0600A0062D /* RNCallerId.m */; };
 /* End PBXBuildFile section */
 
@@ -31,6 +32,7 @@
 		780A14712760F12B00E6A025 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7848192627624B2B00EBA558 /* CallerIDExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; name = CallerIDExtension.appex; path = "/Users/themnumbers/react-native-caller-id/ios/build/Debug-iphoneos/CallerIDExtension.appex"; sourceTree = "<absolute>"; };
 		784819CD276741BE00EBA558 /* CallDirectoryExt.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CallDirectoryExt.entitlements; sourceTree = "<group>"; };
+		784819CF2767434900EBA558 /* CallKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CallKit.framework; path = System/Library/Frameworks/CallKit.framework; sourceTree = SDKROOT; };
 		B3E7B5881CC2AC0600A0062D /* RNCallerId.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RNCallerId.h; sourceTree = "<group>"; };
 		B3E7B5891CC2AC0600A0062D /* RNCallerId.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RNCallerId.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -54,6 +56,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				784819D02767434900EBA558 /* CallKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -76,6 +79,7 @@
 				780A146D2760F12B00E6A025 /* CallDirectoryExt */,
 				134814211AA4EA7D00B7C361 /* Products */,
 				780A146C2760F12B00E6A025 /* CallDirectoryExt.appex */,
+				784819CE2767434800EBA558 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -88,6 +92,14 @@
 				780A14712760F12B00E6A025 /* Info.plist */,
 			);
 			path = CallDirectoryExt;
+			sourceTree = "<group>";
+		};
+		784819CE2767434800EBA558 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				784819CF2767434900EBA558 /* CallKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -451,7 +463,7 @@
 				INFOPLIST_FILE = CallDirectoryExt/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = CallDirectoryExt;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2021 Facebook. All rights reserved.";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				MARKETING_VERSION = 1.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
@@ -493,7 +505,7 @@
 				INFOPLIST_FILE = CallDirectoryExt/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = CallDirectoryExt;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2021 Facebook. All rights reserved.";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				MARKETING_VERSION = 1.0;
 				MTL_FAST_MATH = YES;
