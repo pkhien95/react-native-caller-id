@@ -24,12 +24,13 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		05AD85272240D7DB000DCB02 /* CallerIDExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; name = CallerIDExtension.appex; path = "/Users/themnumbers/react-native-caller-id/ios/build/Debug-iphoneos/CallerIDExtension.appex"; sourceTree = "<absolute>"; };
 		134814201AA4EA6300B7C361 /* libRNCallerId.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libRNCallerId.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		780A146C2760F12B00E6A025 /* CallDirectoryExt.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = CallDirectoryExt.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		780A146E2760F12B00E6A025 /* CallDirectoryHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CallDirectoryHandler.h; sourceTree = "<group>"; };
 		780A146F2760F12B00E6A025 /* CallDirectoryHandler.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CallDirectoryHandler.m; sourceTree = "<group>"; };
 		780A14712760F12B00E6A025 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7848192627624B2B00EBA558 /* CallerIDExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; name = CallerIDExtension.appex; path = "/Users/themnumbers/react-native-caller-id/ios/build/Debug-iphoneos/CallerIDExtension.appex"; sourceTree = "<absolute>"; };
+		784819CD276741BE00EBA558 /* CallDirectoryExt.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CallDirectoryExt.entitlements; sourceTree = "<group>"; };
 		B3E7B5881CC2AC0600A0062D /* RNCallerId.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RNCallerId.h; sourceTree = "<group>"; };
 		B3E7B5891CC2AC0600A0062D /* RNCallerId.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RNCallerId.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -81,6 +82,7 @@
 		780A146D2760F12B00E6A025 /* CallDirectoryExt */ = {
 			isa = PBXGroup;
 			children = (
+				784819CD276741BE00EBA558 /* CallDirectoryExt.entitlements */,
 				780A146E2760F12B00E6A025 /* CallDirectoryHandler.h */,
 				780A146F2760F12B00E6A025 /* CallDirectoryHandler.m */,
 				780A14712760F12B00E6A025 /* Info.plist */,
@@ -105,7 +107,7 @@
 			);
 			name = CallerIDExtension;
 			productName = CallerIDExtension;
-			productReference = 05AD85272240D7DB000DCB02 /* CallerIDExtension.appex */;
+			productReference = 7848192627624B2B00EBA558 /* CallerIDExtension.appex */;
 			productType = "com.apple.product-type.app-extension";
 		};
 		58B511DA1A9E6C8500147676 /* RNCallerId */ = {
@@ -166,6 +168,7 @@
 					};
 					780A146B2760F12B00E6A025 = {
 						CreatedOnToolsVersion = 13.1;
+						DevelopmentTeam = 66GJD743A7;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -438,9 +441,11 @@
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_ENTITLEMENTS = CallDirectoryExt/CallDirectoryExt.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = 66GJD743A7;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = CallDirectoryExt/Info.plist;
@@ -478,6 +483,7 @@
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_ENTITLEMENTS = CallDirectoryExt/CallDirectoryExt.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COPY_PHASE_STRIP = NO;
 				CURRENT_PROJECT_VERSION = 1;
